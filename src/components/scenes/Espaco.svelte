@@ -44,7 +44,6 @@
     poseLabrador = 'sentado';
     erros += 1;
     confianca = Math.max(0, confianca - 10);
-    posicao = 30;
     mensagem = sortear(mensagensInvasao);
   }
 
@@ -93,6 +92,9 @@
         else fase = 'andando';
       }, 1500);
     } else if (atual === 'recolhida') {
+      depois(() => {
+        posicao = 30;
+      }, 300);
       depois(() => {
         poseGatinha = 'quieta';
         fase = 'andando';

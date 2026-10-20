@@ -62,10 +62,13 @@
     </g>
   {:else if pose === 'sentado'}
     <g aria-hidden="true" transition:fade={{ duration: 250 }}>
-      <path
-        class="corpo"
-        d="M150 158 C170 152 178 166 166 176 C158 182 146 170 150 162 Z"
-      />
+      <g class="rabo-sentado">
+        <path
+          class="corpo"
+          d="M150 158 C170 152 178 166 166 176 C158 182 146 170 150 162 Z"
+        />
+      </g>
+      <g class="respira-sentado">
       <ellipse class="corpo" cx="118" cy="150" rx="40" ry="36" />
       <ellipse class="corpo" cx="148" cy="174" rx="13" ry="10" />
       <path
@@ -89,6 +92,7 @@
       <ellipse class="tinta" cx="22" cy="84" rx="7" ry="5.5" />
       <path class="linha" d="M30 96 Q38 104 48 96" />
       <circle class="rosa" cx="42" cy="92" r="5" />
+      </g>
     </g>
   {:else if pose === 'esforco'}
     <g aria-hidden="true" transition:fade={{ duration: 250 }}>
@@ -171,6 +175,7 @@
           d="M162 148 C180 138 184 118 170 112 C162 108 156 120 164 126 C172 132 170 144 156 150 Z"
         />
       </g>
+      <g class="respira-deitado">
       <ellipse class="corpo" cx="150" cy="162" rx="22" ry="20" />
       <ellipse class="corpo" cx="112" cy="158" rx="48" ry="28" />
       <ellipse class="escuro" cx="124" cy="146" rx="14" ry="8" />
@@ -184,6 +189,7 @@
       <path class="linha" d="M58 138 Q68 128 78 138" />
       <path class="linha" d="M26 166 Q34 172 42 166" />
       <circle class="rosa" cx="44" cy="156" r="5" />
+      </g>
     </g>
   {/if}
 </svg>
@@ -235,8 +241,28 @@
 
   .pula {
     transform-box: fill-box;
-    transform-origin: center bottom;
+    transform-origin: 50% 100%;
     animation: pular 0.55s ease-in-out infinite;
+  }
+
+  .respira-sentado,
+  .respira-deitado {
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+  }
+
+  .respira-sentado {
+    animation: respirar-sentado 2.8s ease-in-out infinite;
+  }
+
+  .respira-deitado {
+    animation: respirar-deitado 3.6s ease-in-out infinite;
+  }
+
+  .rabo-sentado {
+    transform-box: fill-box;
+    transform-origin: left center;
+    animation: abanar-sentado 1.4s ease-in-out infinite;
   }
 
   .rabo-rapido {
@@ -287,10 +313,46 @@
   @keyframes pular {
     0%,
     100% {
-      transform: translateY(0);
+      transform: translateY(0) scale(1.06, 0.94);
+    }
+    30% {
+      transform: translateY(-3.5%) scale(0.96, 1.05);
     }
     50% {
-      transform: translateY(-6%);
+      transform: translateY(-6%) scale(1, 1);
+    }
+    75% {
+      transform: translateY(-2%) scale(0.98, 1.03);
+    }
+  }
+
+  @keyframes respirar-sentado {
+    0%,
+    100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(1.025);
+    }
+  }
+
+  @keyframes respirar-deitado {
+    0%,
+    100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(1.03);
+    }
+  }
+
+  @keyframes abanar-sentado {
+    0%,
+    100% {
+      transform: rotate(-8deg);
+    }
+    50% {
+      transform: rotate(8deg);
     }
   }
 
@@ -355,6 +417,9 @@
 
   @media (prefers-reduced-motion: reduce) {
     .pula,
+    .respira-sentado,
+    .respira-deitado,
+    .rabo-sentado,
     .rabo-rapido,
     .orelha,
     .treme,

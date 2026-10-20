@@ -68,6 +68,7 @@ h3 {
 button {
   font: inherit;
   color: inherit;
+  touch-action: manipulation;
 }
 
 @media (prefers-reduced-motion: reduce) {

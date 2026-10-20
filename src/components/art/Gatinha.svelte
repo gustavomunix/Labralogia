@@ -57,6 +57,7 @@
     </g>
   {:else if pose === 'encolhida'}
     <g aria-hidden="true" transition:fade={{ duration: 250 }}>
+      <g class="respira-nervo">
       <path class="corpo" d="M72 158 C54 154 52 176 68 182 C78 186 76 168 70 162 Z" />
       <circle class="corpo" cx="108" cy="152" r="34" />
       <path class="corpo" d="M92 126 C76 114 64 126 76 136 C86 132 96 130 98 126 Z" />
@@ -69,9 +70,11 @@
       <circle class="rosa" cx="126" cy="158" r="4" />
       <path class="rosa" d="M120 164 L128 164 L124 170 Z" />
       <path class="linha" d="M118 172 Q121 175 124 172 Q127 175 130 172" />
+      </g>
     </g>
   {:else if pose === 'virada'}
     <g aria-hidden="true" transition:fade={{ duration: 250 }}>
+      <g class="respira-calma">
       <path
         class="corpo"
         d="M128 150 C150 144 156 114 142 100 C134 92 122 102 130 114 C138 124 140 138 122 150 Z"
@@ -97,6 +100,7 @@
       <path class="fino" d="M74 136 L86 132" />
       <path class="fino" d="M74 140 L88 141" />
       <path class="fino" d="M72 144 L84 148" />
+      </g>
     </g>
   {:else if pose === 'escondida'}
     <g aria-hidden="true" transition:fade={{ duration: 250 }}>
@@ -204,10 +208,23 @@
     stroke-width: calc(var(--traco) * 0.4);
   }
 
-  .respira {
+  .respira,
+  .respira-nervo,
+  .respira-calma {
     transform-box: fill-box;
-    transform-origin: center bottom;
+    transform-origin: 50% 100%;
+  }
+
+  .respira {
     animation: respirar 3.8s ease-in-out infinite;
+  }
+
+  .respira-nervo {
+    animation: respirar-nervo 1.6s ease-in-out infinite;
+  }
+
+  .respira-calma {
+    animation: respirar 3.2s ease-in-out infinite;
   }
 
   .olho-pisca {
@@ -235,6 +252,16 @@
     }
     50% {
       transform: scaleY(1.02);
+    }
+  }
+
+  @keyframes respirar-nervo {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
     }
   }
 
@@ -276,6 +303,8 @@
 
   @media (prefers-reduced-motion: reduce) {
     .respira,
+    .respira-nervo,
+    .respira-calma,
     .olho-pisca,
     .coracao,
     .rabo-sofa {
