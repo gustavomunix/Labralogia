@@ -9,7 +9,7 @@
   let { pose }: Props = $props();
 
   const rotulos: Record<PoseGatinha, string> = {
-    quieta: 'Gatinha quieta, sentada em pãozinho',
+    quieta: 'Gatinha quieta, deitada em formato de pãozinho',
     encolhida: 'Gatinha encolhida em bolinha',
     virada: 'Gatinha virada de costas, focinho empinado',
     escondida: 'Gatinha escondida atrás do sofá',

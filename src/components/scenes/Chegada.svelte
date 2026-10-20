@@ -32,7 +32,7 @@
     ></button>
   </Palco>
 
-  <p class="texto">Ela gosta de ficar quietinha. Ele gosta de chegar.</p>
+  <p class="texto">Ela gosta do espaço dela. Ele gosta de chegar.</p>
 
   <button type="button" class="principal" onclick={onStart}>Vamos tentar?</button>
 </section>

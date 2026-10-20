@@ -30,7 +30,7 @@ export const rodadas: Rodada[] = [
   },
   {
     sinal: 'quieta',
-    legenda: 'Ela levantou a cabeça e tá olhando pra ele.',
+    legenda: 'Ela levantou a cabeça. As orelhas tão pra frente.',
     carinho: 'focinho',
     opcoes: [
       {
@@ -38,7 +38,7 @@ export const rodadas: Rodada[] = [
         correta: false,
         reacao: 'encolhida',
         poseLabrador: 'animado',
-        resposta: 'Ela virou uma bolinha. Rápido demais.',
+        resposta: 'Rápido demais. As orelhas foram pra trás.',
       },
       {
         label: 'Chegar devagar',
@@ -65,14 +65,14 @@ export const rodadas: Rodada[] = [
         correta: false,
         reacao: 'escondida',
         poseLabrador: 'animado',
-        resposta: 'Atrás do sofá de novo. Ele vai aprender.',
+        resposta: 'Ela saiu de fininho. Ele ficou cutucando o ar.',
       },
       {
         label: 'Girar de felicidade',
         correta: false,
         reacao: 'encolhida',
         poseLabrador: 'girando',
-        resposta: 'Derrubou o vaso. Ela se encolheu.',
+        resposta: 'Derrubou o vaso. Ela fingiu que não viu.',
       },
       {
         label: 'Ficar perto sem tocar',
@@ -91,21 +91,21 @@ export const rodadas: Rodada[] = [
         label: 'Deitar do lado',
         correta: true,
         poseLabrador: 'deitado',
-        resposta: 'Lado a lado. Ninguém invadiu ninguém.',
+        resposta: 'Ele deitou devagar. Ela deixou a patinha encostar.',
       },
       {
         label: 'Comemorar pulando',
         correta: false,
         reacao: 'encolhida',
         poseLabrador: 'animado',
-        resposta: 'Calma, campeão. Quase.',
+        resposta: 'Ele comemorou cedo. Ela recuou um pouquinho.',
       },
       {
         label: 'Lamber a orelha dela',
         correta: false,
         reacao: 'virada',
         poseLabrador: 'animado',
-        resposta: 'Ela fez cara de "sério?".',
+        resposta: 'Ela sacudiu a orelha e fez cara de "sério?".',
       },
     ],
   },

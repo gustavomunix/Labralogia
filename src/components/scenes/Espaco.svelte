@@ -12,12 +12,12 @@
   const mensagensEspera = [
     'Ele sentou. Com muito esforço.',
     'O rabo tremeu, mas o bumbum ficou no chão.',
-    'Ele esperou. Ninguém acredita.'
+    'Ele esperou. Nem ele acredita.'
   ];
 
   const mensagensInvasao = [
-    'Muito perto! Ela se encolheu.',
-    'Opa. Isso foi perto demais.',
+    'Perto demais. Ela se encolheu toda.',
+    'Opa. Ela abaixou as orelhas.',
     'Ela virou uma bolinha de pelo.'
   ];
 
@@ -105,8 +105,8 @@
 
 <section class="espaco">
   <p class="dica">
-    Ele vem animado. Toque em "ainda não" quando ele se empolgar. Cada vez que ele espera, ela
-    confia mais.
+    Ele vem aos pulinhos. Toque em "Ainda não" antes de ele entrar no espaço dela. Cada espera
+    vira confiança.
   </p>
 
   <Palco
@@ -122,7 +122,7 @@
     <div
       class="patinhas"
       role="meter"
-      aria-label="confiança"
+      aria-label="confiança dela"
       aria-valuemin={0}
       aria-valuemax={100}
       aria-valuenow={confianca}
@@ -146,7 +146,7 @@
       aria-disabled={bloqueado}
       onclick={esperar}
     >
-      ainda não ✋
+      Ainda não<span class="icone" aria-hidden="true"><Carinho tipo="patinha" /></span>
     </button>
   {/if}
 </section>
@@ -196,6 +196,10 @@
   }
 
   .principal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
     width: 100%;
     min-height: 64px;
     border-radius: var(--raio-pilula);
@@ -222,5 +226,11 @@
   .principal:focus-visible {
     outline: 3px solid var(--laranja-forte);
     outline-offset: 3px;
+  }
+
+  .icone {
+    display: inline-flex;
+    width: 1.6em;
+    height: 1.6em;
   }
 </style>

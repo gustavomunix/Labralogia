@@ -9,10 +9,10 @@
   let { tipo, ativo = true }: Props = $props();
 
   const rotulos = {
-    patinha: { sim: 'patinha conquistada', nao: 'patinha ainda não' },
-    focinho: { sim: 'focinho conquistado', nao: 'focinho ainda não' },
-    rabinho: { sim: 'rabinho conquistado', nao: 'rabinho ainda não' },
-    coracao: { sim: 'coração conquistado', nao: 'coração ainda não' },
+    patinha: { sim: 'patinha conquistada', nao: 'patinha ainda não conquistada' },
+    focinho: { sim: 'focinho conquistado', nao: 'focinho ainda não conquistado' },
+    rabinho: { sim: 'rabinho conquistado', nao: 'rabinho ainda não conquistado' },
+    coracao: { sim: 'coração conquistado', nao: 'coração ainda não conquistado' },
   } satisfies Record<Carinho, { sim: string; nao: string }>;
 
   const rotulo = $derived(ativo ? rotulos[tipo].sim : rotulos[tipo].nao);

@@ -58,13 +58,13 @@
       {/key}
 
       <p class="resumo">
-        jogado em {segundos}s · errou {erros}
-        {erros === 1 ? 'vez' : 'vezes'} (tá tudo bem)
+        {segundos}s juntos · ele se empolgou {erros}
+        {erros === 1 ? 'vez' : 'vezes'}
       </p>
 
       <div class="acoes">
-        <button type="button" class="secundario" onclick={lerDeNovo}>ler de novo</button>
-        <button type="button" class="secundario" onclick={onRestart}>tentar outra vez</button>
+        <button type="button" class="secundario" onclick={lerDeNovo}>Ler de novo</button>
+        <button type="button" class="secundario" onclick={onRestart}>Jogar de novo</button>
       </div>
     </div>
   {/if}
