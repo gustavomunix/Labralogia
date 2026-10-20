@@ -16,8 +16,6 @@
   let poseGatinha = $state<PoseGatinha>('quieta');
   let piscou = $state(false);
   let cartaVisivel = $state(false);
-  let repeticao = $state(0);
-  let cartao = $state<HTMLElement>();
 
   $effect(() => {
     const timers = [
@@ -31,11 +29,6 @@
     ];
     return () => timers.forEach(clearTimeout);
   });
-
-  function lerDeNovo() {
-    cartao?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    repeticao += 1;
-  }
 </script>
 
 <section class="juntos">
@@ -50,12 +43,10 @@
   </p>
 
   {#if cartaVisivel}
-    <div class="area" bind:this={cartao} in:fade={{ duration: 900 }}>
-      {#key repeticao}
-        <article class="carta" in:fly={{ y: 16, duration: 900 }}>
-          {@render children?.()}
-        </article>
-      {/key}
+    <div class="area" in:fade={{ duration: 900 }}>
+      <article class="carta" in:fly={{ y: 16, duration: 900 }}>
+        {@render children?.()}
+      </article>
 
       <p class="resumo">
         {segundos}s juntos · ele se empolgou {erros}
@@ -63,7 +54,6 @@
       </p>
 
       <div class="acoes">
-        <button type="button" class="secundario" onclick={lerDeNovo}>Ler de novo</button>
         <button type="button" class="secundario" onclick={onRestart}>Jogar de novo</button>
       </div>
     </div>
@@ -88,7 +78,6 @@
     display: flex;
     flex-direction: column;
     gap: var(--espaco-2);
-    scroll-margin-top: var(--espaco-2);
   }
 
   .carta {
