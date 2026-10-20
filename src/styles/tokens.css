@@ -1,0 +1,81 @@
+:root {
+  --fundo: #fff8ee;
+  --fundo-2: #fdeedb;
+  --laranja: #ffb38a;
+  --laranja-forte: #f2925f;
+  --amarelo: #ffe08a;
+  --verde-agua: #8fd8c8;
+  --verde-agua-forte: #5fbfab;
+  --rosa: #ffd6e0;
+  --tinta: #3d2c2e;
+  --tinta-suave: #7a6365;
+  --branco: #fffdf9;
+  --cinza-gato: #c9bcb4;
+  --cinza-gato-escuro: #a8988e;
+  --caramelo: #e8b67a;
+  --caramelo-escuro: #c9924f;
+  --sofa: #8fd8c8;
+
+  --traco: 4;
+  --raio: 20px;
+  --raio-pilula: 999px;
+
+  --fonte-titulo: 'Fredoka Variable', ui-rounded, system-ui, sans-serif;
+  --fonte-texto: 'Nunito Variable', ui-rounded, system-ui, sans-serif;
+
+  --espaco-1: 0.5rem;
+  --espaco-2: 1rem;
+  --espaco-3: 1.5rem;
+  --espaco-4: 2.5rem;
+
+  --ease-macio: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--fundo);
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

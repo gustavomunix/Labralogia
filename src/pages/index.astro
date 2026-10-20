@@ -1,0 +1,42 @@
+---
+import '@fontsource-variable/fredoka';
+import '@fontsource-variable/nunito';
+import '../styles/tokens.css';
+import Game from '../components/Game.svelte';
+import { Content as Carta } from '../content/carta.md';
+
+const titulo = 'Labralogia';
+const descricao = 'Uma gatinha que precisa de espaço. Um labrador que tá aprendendo a esperar.';
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#fff8ee" />
+    <title>{titulo}</title>
+    <meta name="description" content={descricao} />
+    <meta property="og:title" content={titulo} />
+    <meta property="og:description" content={descricao} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <main>
+      <Game client:load>
+        <Carta />
+      </Game>
+    </main>
+  </body>
+</html>
+
+<style>
+  main {
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: max(var(--espaco-2), env(safe-area-inset-top)) var(--espaco-2)
+      max(var(--espaco-2), env(safe-area-inset-bottom));
+  }
+</style>
