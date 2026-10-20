@@ -70,7 +70,7 @@ export const rodadas: Rodada[] = [
       {
         label: 'Girar de felicidade',
         correta: false,
-        reacao: 'encolhida',
+        reacao: 'virada',
         poseLabrador: 'girando',
         resposta: 'Derrubou o vaso. Ela fingiu que não viu.',
       },

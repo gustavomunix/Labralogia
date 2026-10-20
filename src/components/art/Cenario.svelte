@@ -18,7 +18,10 @@
   <line class="rodape" x1="0" y1="230" x2="400" y2="230" />
 
   <circle class="janela" cx="70" cy="72" r="36" />
-  <circle class="sol" cx="70" cy="72" r="14" />
+  <circle class="ceu" cx="70" cy="72" r="29" />
+  <circle class="sol" cx="84" cy="58" r="7" />
+  <line class="caixilho" x1="70" y1="43" x2="70" y2="101" />
+  <line class="caixilho" x1="41" y1="72" x2="99" y2="72" />
 
   <ellipse class="tapete" cx="70" cy="268" rx="50" ry="16" />
 
@@ -52,7 +55,7 @@
     height: 100%;
     fill: none;
     stroke: var(--tinta);
-    stroke-width: var(--traco);
+    stroke-width: calc(var(--traco) * 0.8);
     stroke-linecap: round;
     stroke-linejoin: round;
   }
@@ -69,11 +72,22 @@
 
   .rodape {
     stroke: var(--tinta);
-    stroke-width: 2;
+    stroke-width: calc(var(--traco) * 0.5);
   }
 
   .janela {
     fill: var(--branco);
+  }
+
+  .ceu {
+    fill: var(--verde-agua);
+    opacity: 0.45;
+    stroke: none;
+  }
+
+  .caixilho {
+    fill: none;
+    stroke-width: calc(var(--traco) * 0.5);
   }
 
   .sol {

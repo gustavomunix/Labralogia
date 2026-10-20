@@ -21,22 +21,22 @@
 
 <svg viewBox="0 0 200 200" width="100%" height="100%" role="img" aria-label={rotulo}>
   {#if pose === 'quieta'}
-    <g class="respira" aria-hidden="true" transition:fade={{ duration: 250 }}>
+    <g aria-hidden="true" transition:fade={{ duration: 250 }}>
+      <g class="respira">
       <path class="corpo" d="M58 152 C48 160 50 174 64 174 C72 174 68 162 58 158 Z" />
       <ellipse class="corpo" cx="94" cy="160" rx="44" ry="26" />
       <ellipse class="branco" cx="98" cy="170" rx="20" ry="11" />
       <circle class="corpo" cx="124" cy="130" r="28" />
-      <path class="corpo" d="M106 118 C100 90 116 76 124 110 C118 120 110 122 106 118 Z" />
-      <path class="corpo" d="M124 110 C130 76 152 82 146 118 C138 124 128 118 124 110 Z" />
-      <path class="rosa" d="M110 114 C106 96 118 86 122 110 Z" />
-      <path class="rosa" d="M128 108 C132 88 144 92 140 114 Z" />
-      <path class="fino" d="M116 106 L115 114" />
-      <path class="fino" d="M124 104 L124 114" />
-      <path class="fino" d="M132 106 L133 114" />
+      <path class="corpo" d="M104 120 C98 92 112 78 118 112 C114 122 108 124 104 120 Z" />
+      <path class="corpo" d="M130 112 C136 78 152 84 146 118 C140 124 132 118 130 112 Z" />
+      <path class="rosa" d="M108 116 C104 98 114 88 116 112 Z" />
+      <path class="rosa" d="M134 110 C138 90 146 94 142 114 Z" />
+      <path class="fino" d="M122 114 L122 120" />
+      <path class="fino" d="M126 114 L126 120" />
       <path class="linha" d="M108 128 Q116 120 124 128" />
       <path class="linha" d="M128 126 Q136 118 144 126" />
-      <circle class="rosa" cx="110" cy="138" r="4" />
-      <circle class="rosa" cx="138" cy="136" r="4.5" />
+      <circle class="rosa" cx="110" cy="138" r="5.5" />
+      <circle class="rosa" cx="138" cy="136" r="5.5" />
       <ellipse class="branco" cx="130" cy="140" rx="8" ry="6.5" />
       <path class="rosa" d="M126 137 L134 137 L130 143 Z" />
       <path class="linha" d="M124 146 Q127 150 130 146 Q133 150 136 146" />
@@ -53,21 +53,22 @@
         fill-rule="evenodd"
         d="M94 172 a14 14 0 1 1 28 0 a14 14 0 1 1 -28 0 z m8 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"
       />
+      </g>
     </g>
   {:else if pose === 'encolhida'}
     <g aria-hidden="true" transition:fade={{ duration: 250 }}>
       <path class="corpo" d="M72 158 C54 154 52 176 68 182 C78 186 76 168 70 162 Z" />
       <circle class="corpo" cx="108" cy="152" r="34" />
-      <path class="corpo" d="M86 124 C64 112 48 124 56 136 C66 130 78 128 88 132 Z" />
-      <path class="corpo" d="M84 136 C60 134 46 150 56 160 C68 152 78 146 86 144 Z" />
-      <path class="rosa" d="M78 126 C66 120 58 128 68 132 C74 128 78 128 80 128 Z" />
-      <path class="rosa" d="M76 140 C64 140 56 150 66 152 C72 146 76 142 78 142 Z" />
-      <path class="linha" d="M102 144 L90 152 L102 160" />
-      <path class="linha" d="M114 144 L126 152 L114 160" />
-      <circle class="rosa" cx="94" cy="158" r="4" />
-      <circle class="rosa" cx="116" cy="156" r="4" />
-      <path class="rosa" d="M112 164 L120 164 L116 170 Z" />
-      <path class="linha" d="M110 172 Q113 175 116 172 Q119 175 122 172" />
+      <path class="corpo" d="M92 126 C76 114 64 126 76 136 C86 132 96 130 98 126 Z" />
+      <path class="corpo" d="M116 120 C128 106 146 114 140 128 C130 126 120 126 116 122 Z" />
+      <path class="rosa" d="M84 126 C76 120 70 128 78 132 C84 128 88 128 86 126 Z" />
+      <path class="rosa" d="M122 120 C130 112 138 116 134 124 C128 122 124 122 122 120 Z" />
+      <path class="linha" d="M112 146 L102 154 L112 162" />
+      <path class="linha" d="M124 144 L136 152 L124 160" />
+      <circle class="rosa" cx="108" cy="160" r="4" />
+      <circle class="rosa" cx="126" cy="158" r="4" />
+      <path class="rosa" d="M120 164 L128 164 L124 170 Z" />
+      <path class="linha" d="M118 172 Q121 175 124 172 Q127 175 130 172" />
     </g>
   {:else if pose === 'virada'}
     <g aria-hidden="true" transition:fade={{ duration: 250 }}>
@@ -86,7 +87,7 @@
       <path class="fino" d="M86 108 L87 116" />
       <path class="linha" d="M60 126 Q66 120 72 126" />
       <path class="linha" d="M76 124 Q82 118 88 124" />
-      <circle class="rosa" cx="86" cy="136" r="4" />
+      <circle class="rosa" cx="86" cy="136" r="5.5" />
       <ellipse class="branco" cx="66" cy="140" rx="8" ry="6.5" />
       <path class="rosa" d="M62 134 L70 134 L66 140 Z" />
       <path class="linha" d="M60 148 Q63 152 66 148 Q69 152 72 148" />
@@ -103,6 +104,12 @@
       <path class="corpo" d="M104 112 C108 70 126 74 122 112 Z" />
       <path class="rosa" d="M88 108 C86 84 96 82 98 108 Z" />
       <path class="rosa" d="M106 108 C110 80 120 82 116 108 Z" />
+      <g class="rabo-sofa">
+        <path
+          class="corpo"
+          d="M166 146 C186 138 190 114 174 106 C164 102 158 116 166 124 C176 132 172 144 158 148 Z"
+        />
+      </g>
       <path
         class="sofa"
         d="M40 186 L40 136 C40 104 66 90 100 90 C134 90 160 104 160 136 L160 186 Z"
@@ -110,12 +117,6 @@
       <ellipse class="sofa" cx="44" cy="158" rx="20" ry="28" />
       <ellipse class="sofa" cx="156" cy="158" rx="20" ry="28" />
       <ellipse class="sofa" cx="100" cy="164" rx="46" ry="16" />
-      <g class="rabo-sofa">
-        <path
-          class="corpo"
-          d="M166 146 C186 138 190 114 174 106 C164 102 158 116 166 124 C176 132 172 144 158 148 Z"
-        />
-      </g>
     </g>
   {:else if pose === 'piscando'}
     <g aria-hidden="true" transition:fade={{ duration: 250 }}>
@@ -124,21 +125,20 @@
         <ellipse class="corpo" cx="94" cy="160" rx="44" ry="26" />
         <ellipse class="branco" cx="98" cy="170" rx="20" ry="11" />
         <circle class="corpo" cx="124" cy="130" r="28" />
-        <path class="corpo" d="M106 118 C100 90 116 76 124 110 C118 120 110 122 106 118 Z" />
-        <path class="corpo" d="M124 110 C130 76 152 82 146 118 C138 124 128 118 124 110 Z" />
-        <path class="rosa" d="M110 114 C106 96 118 86 122 110 Z" />
-        <path class="rosa" d="M128 108 C132 88 144 92 140 114 Z" />
-        <path class="fino" d="M116 106 L115 114" />
-        <path class="fino" d="M124 104 L124 114" />
-        <path class="fino" d="M132 106 L133 114" />
+        <path class="corpo" d="M104 120 C98 92 112 78 118 112 C114 122 108 124 104 120 Z" />
+        <path class="corpo" d="M130 112 C136 78 152 84 146 118 C140 124 132 118 130 112 Z" />
+        <path class="rosa" d="M108 116 C104 98 114 88 116 112 Z" />
+        <path class="rosa" d="M134 110 C138 90 146 94 142 114 Z" />
+        <path class="fino" d="M122 114 L122 120" />
+        <path class="fino" d="M126 114 L126 120" />
         <g class="olho-pisca">
           <path class="linha" d="M108 128 Q116 120 124 128" />
         </g>
         <g class="olho-pisca">
           <path class="linha" d="M128 126 Q136 118 144 126" />
         </g>
-        <circle class="rosa" cx="110" cy="138" r="6.5" />
-        <circle class="rosa" cx="138" cy="136" r="7" />
+        <circle class="rosa" cx="110" cy="138" r="5.5" />
+        <circle class="rosa" cx="138" cy="136" r="5.5" />
         <ellipse class="branco" cx="130" cy="140" rx="8" ry="6.5" />
         <path class="rosa" d="M126 137 L134 137 L130 143 Z" />
         <path class="linha" d="M124 146 Q127 150 130 146 Q133 150 136 146" />

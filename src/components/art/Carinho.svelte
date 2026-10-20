@@ -27,20 +27,23 @@
       <circle class="laranja" cx="36" cy="16" r="5" />
       <ellipse class="laranja" cx="24" cy="31" rx="12" ry="9" />
     {:else if tipo === 'focinho'}
-      <circle class="amarelo" cx="24" cy="24" r="16" />
-      <ellipse class="tinta" cx="24" cy="21" rx="7" ry="5" />
-      <path class="linha" d="M24 25 Q24 32 17 30" />
-      <path class="linha" d="M24 25 Q24 32 31 30" />
-      <path class="linha" d="M8 18 L16 21" />
-      <path class="linha" d="M8 26 L16 24" />
-      <path class="linha" d="M32 21 L40 18" />
-      <path class="linha" d="M32 24 L40 26" />
+      <circle class="focinho-fundo" cx="24" cy="24" r="18" />
+      <ellipse class="focinho-nariz" cx="24" cy="21" rx="6" ry="4.5" />
+      <path
+        class="focinho-boca"
+        d="M24 25.5 V28.5 M24 28.5 Q21 31.5 18 28.5 M24 28.5 Q27 31.5 30 28.5"
+      />
+      <circle class="focinho-ponto" cx="15" cy="25" r="1.4" />
+      <circle class="focinho-ponto" cx="14" cy="29.5" r="1.4" />
+      <circle class="focinho-ponto" cx="16.5" cy="33" r="1.4" />
+      <circle class="focinho-ponto" cx="33" cy="25" r="1.4" />
+      <circle class="focinho-ponto" cx="34" cy="29.5" r="1.4" />
+      <circle class="focinho-ponto" cx="31.5" cy="33" r="1.4" />
     {:else if tipo === 'rabinho'}
       <g class={{ abanar: ativo }}>
-        <path
-          class="caramelo"
-          d="M14 34 C12 16 24 6 36 14 C44 20 40 32 28 28 C20 25 18 34 16 36 Z"
-        />
+        <path class="rabo-contorno" d="M10 38 C18 36 22 27 29 22 S37 11 35 8" />
+        <path class="rabo-cor" d="M10 38 C18 36 22 27 29 22 S37 11 35 8" />
+        <path class="rabo-movimento" d="M40 13 L44 11 M40.5 18 L44.5 18" />
       </g>
     {:else if tipo === 'coracao'}
       <path
@@ -68,35 +71,85 @@
     fill: var(--laranja);
   }
 
-  .amarelo {
-    fill: var(--amarelo);
-  }
-
-  .tinta {
-    fill: var(--tinta);
-  }
-
-  .caramelo {
-    fill: var(--caramelo);
-  }
-
   .rosa {
     fill: var(--rosa);
   }
 
-  .linha {
+  .focinho-fundo {
+    fill: var(--amarelo);
+    stroke: var(--tinta);
+    stroke-width: var(--traco);
+  }
+
+  .focinho-nariz,
+  .focinho-ponto {
+    fill: var(--tinta);
+    stroke: none;
+  }
+
+  .focinho-boca {
     fill: none;
+    stroke: var(--tinta);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .rabo-contorno,
+  .rabo-cor,
+  .rabo-movimento {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .rabo-contorno {
+    stroke: var(--tinta);
+    stroke-width: 11;
+  }
+
+  .rabo-cor {
+    stroke: var(--caramelo);
+    stroke-width: 6;
+  }
+
+  .rabo-movimento {
+    stroke: var(--tinta);
+    stroke-width: 2.5;
   }
 
   .vazio .laranja,
-  .vazio .amarelo,
-  .vazio .tinta,
-  .vazio .caramelo,
   .vazio .rosa,
-  .vazio .linha {
+  .vazio .focinho-fundo {
     fill: var(--fundo-2);
     stroke: var(--cinza-gato);
     stroke-dasharray: 3 2.2;
+  }
+
+  .vazio .focinho-nariz,
+  .vazio .focinho-ponto {
+    fill: var(--cinza-gato);
+    stroke: none;
+  }
+
+  .vazio .focinho-boca,
+  .vazio .rabo-movimento {
+    fill: none;
+    stroke: var(--cinza-gato);
+    stroke-width: 2.5;
+    stroke-dasharray: none;
+  }
+
+  .vazio .rabo-contorno {
+    stroke: var(--cinza-gato);
+    stroke-width: 11;
+    stroke-dasharray: none;
+  }
+
+  .vazio .rabo-cor {
+    stroke: var(--fundo-2);
+    stroke-width: 6;
+    stroke-dasharray: none;
   }
 
   .pop {
@@ -106,8 +159,8 @@
   }
 
   .abanar {
-    transform-box: fill-box;
-    transform-origin: 18% 92%;
+    transform-box: view-box;
+    transform-origin: calc(10 / 48 * 100%) calc(38 / 48 * 100%);
     animation: abanar 0.7s ease-in-out infinite;
   }
 

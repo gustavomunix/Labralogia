@@ -21,7 +21,8 @@
 
 <svg viewBox="0 0 200 200" width="100%" height="100%" role="img" aria-label={rotulo}>
   {#if pose === 'animado'}
-    <g class="pula" aria-hidden="true" transition:fade={{ duration: 250 }}>
+    <g aria-hidden="true" transition:fade={{ duration: 250 }}>
+      <g class="pula">
       <g class="rabo-rapido">
         <path
           class="corpo"
@@ -57,6 +58,7 @@
       <ellipse class="tinta" cx="22" cy="104" rx="8" ry="6" />
       <ellipse class="tinta" cx="32" cy="118" rx="8" ry="5" />
       <ellipse class="rosa" cx="32" cy="126" rx="6" ry="9" />
+      </g>
     </g>
   {:else if pose === 'sentado'}
     <g aria-hidden="true" transition:fade={{ duration: 250 }}>
@@ -89,7 +91,8 @@
       <circle class="rosa" cx="42" cy="92" r="5" />
     </g>
   {:else if pose === 'esforco'}
-    <g class="treme" aria-hidden="true" transition:fade={{ duration: 250 }}>
+    <g aria-hidden="true" transition:fade={{ duration: 250 }}>
+      <g class="treme">
       <g class="rabo-micro">
         <path
           class="corpo"
@@ -122,39 +125,42 @@
         class="suor"
         d="M48 26 C48 26 42 38 42 42 A6 6 0 1 0 54 42 C54 38 48 26 48 26 Z"
       />
+      </g>
     </g>
   {:else if pose === 'girando'}
     <g aria-hidden="true" transition:fade={{ duration: 250 }}>
-      <g class="gira">
-      <path
-        class="corpo"
-        d="M156 108 C174 96 182 72 170 58 C162 50 150 60 154 72 C160 86 156 100 148 110 Z"
-      />
-      <rect class="corpo" x="132" y="148" width="16" height="38" rx="8" />
-      <rect class="corpo" x="150" y="142" width="18" height="44" rx="9" />
-      <ellipse class="corpo" cx="122" cy="122" rx="46" ry="32" />
-      <ellipse class="escuro" cx="132" cy="110" rx="11" ry="7" />
-      <path
-        class="escuro"
-        d="M70 62 C88 50 104 72 96 98 C90 114 76 108 72 90 C68 74 64 66 70 62 Z"
-      />
-      <rect class="corpo" x="82" y="146" width="16" height="40" rx="8" />
-      <ellipse class="corpo" cx="92" cy="118" rx="24" ry="28" />
-      <ellipse class="claro" cx="118" cy="136" rx="26" ry="14" />
-      <rect class="corpo" x="98" y="140" width="18" height="46" rx="9" />
-      <circle class="corpo" cx="62" cy="96" r="34" />
-      <path
-        class="escuro"
-        d="M44 68 C28 72 18 98 28 118 C34 130 50 120 52 102 C54 82 52 70 44 68 Z"
-      />
-      <ellipse class="claro" cx="36" cy="108" rx="18" ry="13" />
-      <circle class="branco" cx="46" cy="86" r="9" />
-      <circle class="branco" cx="66" cy="82" r="8.5" />
-      <circle class="tinta" cx="42" cy="87" r="5" />
-      <circle class="tinta" cx="62" cy="83" r="4.6" />
-      <ellipse class="tinta" cx="22" cy="104" rx="8" ry="6" />
-      <ellipse class="tinta" cx="32" cy="118" rx="8" ry="5" />
-      <ellipse class="rosa" cx="32" cy="126" rx="6" ry="9" />
+      <g class="apoio">
+        <g class="gira">
+          <path
+            class="corpo"
+            d="M156 108 C174 96 182 72 170 58 C162 50 150 60 154 72 C160 86 156 100 148 110 Z"
+          />
+          <rect class="corpo" x="132" y="148" width="16" height="38" rx="8" />
+          <rect class="corpo" x="150" y="142" width="18" height="44" rx="9" />
+          <ellipse class="corpo" cx="122" cy="122" rx="46" ry="32" />
+          <ellipse class="escuro" cx="132" cy="110" rx="11" ry="7" />
+          <path
+            class="escuro"
+            d="M70 62 C88 50 104 72 96 98 C90 114 76 108 72 90 C68 74 64 66 70 62 Z"
+          />
+          <rect class="corpo" x="82" y="146" width="16" height="40" rx="8" />
+          <ellipse class="corpo" cx="92" cy="118" rx="24" ry="28" />
+          <ellipse class="claro" cx="118" cy="136" rx="26" ry="14" />
+          <rect class="corpo" x="98" y="140" width="18" height="46" rx="9" />
+          <circle class="corpo" cx="62" cy="96" r="34" />
+          <path
+            class="escuro"
+            d="M44 68 C28 72 18 98 28 118 C34 130 50 120 52 102 C54 82 52 70 44 68 Z"
+          />
+          <ellipse class="claro" cx="36" cy="108" rx="18" ry="13" />
+          <circle class="branco" cx="46" cy="86" r="9" />
+          <circle class="branco" cx="66" cy="82" r="8.5" />
+          <circle class="tinta" cx="42" cy="87" r="5" />
+          <circle class="tinta" cx="62" cy="83" r="4.6" />
+          <ellipse class="tinta" cx="22" cy="104" rx="8" ry="6" />
+          <ellipse class="tinta" cx="32" cy="118" rx="8" ry="5" />
+          <ellipse class="rosa" cx="32" cy="126" rx="6" ry="9" />
+        </g>
       </g>
     </g>
   {:else if pose === 'deitado'}
@@ -260,9 +266,15 @@
     animation: micro 0.32s ease-in-out infinite;
   }
 
+  .apoio {
+    transform-box: view-box;
+    transform: translateY(-5.7%);
+  }
+
   .gira {
     transform-box: view-box;
-    transform-origin: 50% 60%;
+    transform-origin: 54% 58%;
+    transform: scale(0.85);
     animation: girar 0.9s linear infinite;
   }
 
@@ -324,10 +336,10 @@
 
   @keyframes girar {
     from {
-      transform: rotate(0deg) scale(0.78);
+      transform: rotate(0deg) scale(0.85);
     }
     to {
-      transform: rotate(360deg) scale(0.78);
+      transform: rotate(360deg) scale(0.85);
     }
   }
 
